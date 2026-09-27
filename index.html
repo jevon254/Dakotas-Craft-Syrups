@@ -221,6 +221,49 @@
   .recipe-placeholder h3 { font-family: var(--font-display); font-size: 1.4rem; color: var(--gray-700); margin-bottom: 0.5rem; }
   .recipe-placeholder p { color: var(--gray-500); font-size: 0.875rem; }
 
+  /* ── RECIPE CARDS ── */
+  .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+  .recipe-card { background: var(--white); border-radius: var(--radius-lg); border: 1.5px solid var(--gray-200); overflow: hidden; transition: all 0.25s; }
+  .recipe-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: transparent; }
+  .recipe-card-top { padding: 1.5rem 1.5rem 0; }
+  .recipe-card-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.65rem; border-radius: 100px; margin-bottom: 0.65rem; }
+  .recipe-card-title { font-family: var(--font-display); font-size: 1.2rem; color: var(--gray-900); font-weight: 700; margin-bottom: 0.3rem; }
+  .recipe-card-syrup { font-size: 0.78rem; color: var(--purple); font-weight: 600; margin-bottom: 1rem; }
+  .recipe-divider { border: none; border-top: 1px solid var(--gray-100); margin: 0 1.5rem; }
+  .recipe-card-body { padding: 1rem 1.5rem 1.5rem; }
+  .recipe-section-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-700); margin-bottom: 0.5rem; margin-top: 0.75rem; }
+  .recipe-section-label:first-child { margin-top: 0; }
+  .recipe-ingr-list { list-style: none; padding: 0; }
+  .recipe-ingr-list li { font-size: 0.85rem; color: var(--gray-700); padding: 0.2rem 0; padding-left: 1rem; position: relative; }
+  .recipe-ingr-list li::before { content: '•'; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+  .recipe-steps-list { list-style: none; padding: 0; counter-reset: steps; }
+  .recipe-steps-list li { font-size: 0.85rem; color: var(--gray-700); padding: 0.3rem 0 0.3rem 1.75rem; position: relative; counter-increment: steps; }
+  .recipe-steps-list li::before { content: counter(steps); position: absolute; left: 0; background: var(--purple); color: var(--white); font-size: 0.65rem; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; top: 5px; }
+  .recipe-note { background: var(--gray-100); border-radius: var(--radius); padding: 0.75rem 1rem; font-size: 0.8rem; color: var(--gray-700); margin-top: 0.75rem; line-height: 1.5; border-left: 3px solid var(--teal); }
+  .recipe-tip { background: #FFF8E8; border-radius: var(--radius); padding: 0.75rem 1rem; font-size: 0.8rem; color: #7A5500; margin-top: 0.75rem; line-height: 1.5; border-left: 3px solid #F5C842; }
+
+  .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+  .recipe-card { background: var(--white); border-radius: var(--radius-lg); border: 1.5px solid var(--gray-200); padding: 1.75rem; transition: all 0.25s; display: flex; flex-direction: column; }
+  .recipe-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+  .recipe-card-emoji { font-size: 2rem; margin-bottom: 0.4rem; display: block; }
+  .recipe-card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.75rem; }
+  .recipe-card-tag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 0.2rem 0.65rem; border-radius: 100px; }
+  .recipe-card-tag.coffee { background: #FDF0DC; color: #9B6A00; }
+  .recipe-card-tag.mocktail { background: #E8F8F5; color: #0A7A78; }
+  .recipe-card-tag.cocktail { background: #F3E8FC; color: #6B1FA8; }
+  .recipe-card-tag.hot { background: #FEF0E8; color: #A84A1F; }
+  .recipe-card-name { font-family: var(--font-display); font-size: 1.2rem; color: var(--gray-900); font-weight: 700; margin-bottom: 0.3rem; }
+  .recipe-card-syrup { font-size: 0.78rem; color: var(--purple); font-weight: 600; margin-bottom: 0.75rem; }
+  .recipe-section-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-700); margin-bottom: 0.4rem; margin-top: 0.75rem; }
+  .recipe-ingredients { list-style: none; }
+  .recipe-ingredients li { font-size: 0.84rem; color: var(--gray-500); padding: 0.3rem 0; border-bottom: 0.5px solid var(--gray-100); display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.4; }
+  .recipe-ingredients li::before { content: '•'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+  .recipe-steps { list-style: none; counter-reset: steps; }
+  .recipe-steps li { font-size: 0.84rem; color: var(--gray-500); padding: 0.35rem 0; border-bottom: 0.5px solid var(--gray-100); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5; counter-increment: steps; }
+  .recipe-steps li::before { content: counter(steps); background: var(--purple); color: var(--white); font-size: 0.65rem; font-weight: 700; min-width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .recipe-tip { background: var(--gray-100); border-radius: var(--radius); padding: 0.75rem 1rem; font-size: 0.8rem; color: var(--gray-700); line-height: 1.5; margin-top: 0.75rem; border-left: 3px solid var(--teal); }
+  .recipe-tip strong { color: var(--teal-dark); }
+
   /* ── FIND US ── */
   #findus {
     background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%);
@@ -691,24 +734,225 @@
       <button class="recipe-tab" onclick="showTab('hot-drinks',this)">🍫 Hot Drinks</button>
       <button class="recipe-tab" onclick="showTab('lemonades',this)">🍋 Lemonades</button>
     </div>
+
+    <!-- COFFEE TAB -->
     <div id="tab-coffee" class="recipe-panel active">
-      <div class="recipe-placeholder"><div class="rp-icon">☕</div><h3>Coffee Recipes Coming Soon</h3><p>We're brewing up some delicious coffee recipes. Follow us on Facebook for updates!</p></div>
+      <div class="recipe-grid">
+
+        <div class="recipe-card">
+          <span class="recipe-card-emoji">☕</span>
+          <div class="recipe-card-top">
+            <div>
+              <h3 class="recipe-card-name">Iced Vanilla Bean Latte or Matcha</h3>
+              <p class="recipe-card-syrup">🍶 Vanilla Bean Syrup</p>
+            </div>
+            <span class="recipe-card-tag coffee">Coffee</span>
+          </div>
+          <p class="recipe-section-label">Ingredients</p>
+          <ul class="recipe-ingredients">
+            <li>1–2 tbsp vanilla bean syrup (adjust to your sweetness preference)</li>
+            <li>1–2 shots of espresso or matcha</li>
+            <li>6–10 oz milk of choice</li>
+            <li>Ice</li>
+          </ul>
+          <p class="recipe-section-label">Instructions</p>
+          <ol class="recipe-steps">
+            <li>Fill a glass with ice.</li>
+            <li>Add vanilla bean syrup to the glass.</li>
+            <li>Pour espresso or matcha over the ice.</li>
+            <li>Top with milk of choice and stir gently.</li>
+          </ol>
+          <div class="recipe-tip"><strong>Add-on tip:</strong> Make a Vanilla Bean Cold Foam! Combine 1 tbsp vanilla bean syrup, 1 tbsp heavy cream, and 1 tbsp 2% milk. Froth or shake until foamy and pour over the top instead of stirring milk in.</div>
+        </div>
+
+        <div class="recipe-card">
+          <span class="recipe-card-emoji">🥤</span>
+          <div class="recipe-card-top">
+            <div>
+              <h3 class="recipe-card-name">Brown Sugar Shaken Espresso</h3>
+              <p class="recipe-card-syrup">🍶 Brown Sugar Vanilla Syrup</p>
+            </div>
+            <span class="recipe-card-tag coffee">Coffee</span>
+          </div>
+          <p class="recipe-section-label">Ingredients</p>
+          <ul class="recipe-ingredients">
+            <li>1–2 tbsp brown sugar vanilla syrup (adjust to your sweetness preference)</li>
+            <li>3–4 shots of espresso</li>
+            <li>⅓ cup milk of choice</li>
+            <li>Ice</li>
+            <li>Cinnamon for topping</li>
+          </ul>
+          <p class="recipe-section-label">Instructions</p>
+          <ol class="recipe-steps">
+            <li>Add espresso and brown sugar vanilla syrup to a cocktail shaker with ice.</li>
+            <li>Shake vigorously for 15–20 seconds until frothy.</li>
+            <li>Strain into a glass over fresh ice.</li>
+            <li>Top with milk of choice and sprinkle with cinnamon.</li>
+          </ol>
+        </div>
+
+      </div>
     </div>
+
+    <!-- MOCKTAILS TAB -->
     <div id="tab-mocktails" class="recipe-panel">
-      <div class="recipe-placeholder"><div class="rp-icon">🍹</div><h3>Mocktail Recipes Coming Soon</h3><p>Fun, flavorful mocktail recipes are on the way. Follow us on Facebook to be the first to know!</p></div>
+      <div class="recipe-grid">
+
+        <div class="recipe-card">
+          <span class="recipe-card-emoji">✨</span>
+          <div class="recipe-card-top">
+            <div>
+              <h3 class="recipe-card-name">Brown Sugar Vanilla Fizz</h3>
+              <p class="recipe-card-syrup">🍶 Brown Sugar Vanilla Syrup</p>
+            </div>
+            <span class="recipe-card-tag mocktail">Mocktail</span>
+          </div>
+          <p class="recipe-section-label">Ingredients</p>
+          <ul class="recipe-ingredients">
+            <li>1 tbsp brown sugar vanilla syrup</li>
+            <li>1 tbsp fresh squeezed lemon juice</li>
+            <li>4 oz ginger ale</li>
+            <li>2 oz club soda or sparkling water</li>
+            <li>Ice</li>
+          </ul>
+          <p class="recipe-section-label">Instructions</p>
+          <ol class="recipe-steps">
+            <li>Fill a glass with ice.</li>
+            <li>Add syrup and fresh lemon juice, stir to combine.</li>
+            <li>Pour ginger ale over the ice.</li>
+            <li>Top with club soda or sparkling water. Stir gently and serve.</li>
+          </ol>
+          <div class="recipe-tip"><strong>Make it a cocktail:</strong> Add your alcohol of choice before the soda for a great cocktail version!</div>
+        </div>
+
+        <div class="recipe-card">
+          <span class="recipe-card-emoji">🐉</span>
+          <div class="recipe-card-top">
+            <div>
+              <h3 class="recipe-card-name">Dragon Fruit Fizz</h3>
+              <p class="recipe-card-syrup">🍶 Dragon Fruit Syrup</p>
+            </div>
+            <span class="recipe-card-tag mocktail">Mocktail</span>
+          </div>
+          <p class="recipe-section-label">Ingredients</p>
+          <ul class="recipe-ingredients">
+            <li>1 tbsp dragon fruit syrup</li>
+            <li>½ tbsp fresh lemon juice</li>
+            <li>Lemon lime soda or sparkling water to top</li>
+            <li>Ice</li>
+          </ul>
+          <p class="recipe-section-label">Instructions</p>
+          <ol class="recipe-steps">
+            <li>Fill a glass with ice.</li>
+            <li>Add dragon fruit syrup and lemon juice.</li>
+            <li>Top off with lemon lime soda or sparkling water.</li>
+            <li>Stir gently and serve.</li>
+          </ol>
+        </div>
+
+      </div>
     </div>
+
+    <!-- COCKTAILS TAB -->
     <div id="tab-cocktails" class="recipe-panel">
-      <div class="recipe-placeholder"><div class="rp-icon">🍸</div><h3>Cocktail Recipes Coming Soon</h3><p>Craft cocktail recipes are coming soon. Stay tuned!</p></div>
+      <div class="recipe-grid">
+
+        <div class="recipe-card">
+          <span class="recipe-card-emoji">✨</span>
+          <div class="recipe-card-top">
+            <div>
+              <h3 class="recipe-card-name">Brown Sugar Vanilla Fizz</h3>
+              <p class="recipe-card-syrup">🍶 Brown Sugar Vanilla Syrup</p>
+            </div>
+            <span class="recipe-card-tag cocktail">Cocktail</span>
+          </div>
+          <p class="recipe-section-label">Ingredients</p>
+          <ul class="recipe-ingredients">
+            <li>1 tbsp brown sugar vanilla syrup</li>
+            <li>1 tbsp fresh squeezed lemon juice</li>
+            <li>Alcohol of choice</li>
+            <li>4 oz ginger ale</li>
+            <li>2 oz club soda or sparkling water</li>
+            <li>Ice</li>
+          </ul>
+          <p class="recipe-section-label">Instructions</p>
+          <ol class="recipe-steps">
+            <li>Fill a glass with ice.</li>
+            <li>Add syrup, lemon juice, and alcohol of choice. Stir to combine.</li>
+            <li>Pour ginger ale over the ice.</li>
+            <li>Top with club soda or sparkling water. Stir gently and serve.</li>
+          </ol>
+        </div>
+
+        <div class="recipe-card">
+          <span class="recipe-card-emoji">🥃</span>
+          <div class="recipe-card-top">
+            <div>
+              <h3 class="recipe-card-name">Spicy Churro Mule</h3>
+              <p class="recipe-card-syrup">🍶 Churro Syrup</p>
+            </div>
+            <span class="recipe-card-tag cocktail">Cocktail</span>
+          </div>
+          <p class="recipe-section-label">Ingredients</p>
+          <ul class="recipe-ingredients">
+            <li>1 tbsp churro syrup</li>
+            <li>Whiskey of choice</li>
+            <li>Ginger beer to top</li>
+            <li>Ice</li>
+          </ul>
+          <p class="recipe-section-label">Instructions</p>
+          <ol class="recipe-steps">
+            <li>Fill a glass or mule mug with ice.</li>
+            <li>Add churro syrup and whiskey of choice.</li>
+            <li>Top with ginger beer and stir gently.</li>
+            <li>Optional: garnish with a cinnamon stick.</li>
+          </ol>
+        </div>
+
+      </div>
     </div>
+
+    <!-- DIRTY SODAS TAB -->
     <div id="tab-dirty-sodas" class="recipe-panel">
       <div class="recipe-placeholder"><div class="rp-icon">🧃</div><h3>Dirty Soda Recipes Coming Soon</h3><p>Dirty soda recipes are on their way. Follow us on Facebook for updates!</p></div>
     </div>
+
+    <!-- HOT DRINKS TAB -->
     <div id="tab-hot-drinks" class="recipe-panel">
-      <div class="recipe-placeholder"><div class="rp-icon">🍫</div><h3>Hot Drink Recipes Coming Soon</h3><p>Cozy hot drink recipes coming soon. Stay tuned!</p></div>
+      <div class="recipe-grid">
+
+        <div class="recipe-card">
+          <span class="recipe-card-emoji">🍫</span>
+          <div class="recipe-card-top">
+            <div>
+              <h3 class="recipe-card-name">Churro Hot Chocolate</h3>
+              <p class="recipe-card-syrup">🍶 Churro Syrup</p>
+            </div>
+            <span class="recipe-card-tag hot">Hot Drink</span>
+          </div>
+          <p class="recipe-section-label">Ingredients</p>
+          <ul class="recipe-ingredients">
+            <li>1 tbsp churro syrup</li>
+            <li>Your favorite hot cocoa mix</li>
+            <li>Milk or water (per your cocoa mix instructions)</li>
+          </ul>
+          <p class="recipe-section-label">Instructions</p>
+          <ol class="recipe-steps">
+            <li>Prepare your favorite hot cocoa mix with milk or water as directed.</li>
+            <li>Stir in 1 tbsp of churro syrup.</li>
+            <li>Top with whipped cream or marshmallows if desired.</li>
+          </ol>
+          <div class="recipe-tip"><strong>Tip:</strong> Try topping with our Toasted Marshmallow Syrup drizzle for a s'mores twist!</div>
+        </div>
+
+      </div>
     </div>
+
+    <!-- LEMONADES TAB -->
     <div id="tab-lemonades" class="recipe-panel">
       <div class="recipe-placeholder"><div class="rp-icon">🍋</div><h3>Lemonade & Refresher Recipes Coming Soon</h3><p>Refreshing lemonade recipes are on the way. Follow us on Facebook for updates!</p></div>
     </div>
+
   </div>
 </section>
 
